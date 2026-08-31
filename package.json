@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "primeiros-passos-node",
   "version": "2.0.0",
   "description": "",
@@ -20,6 +21,10 @@
     "multer": "^1.4.5-lts.1",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
+=======
+  "dependencies": {
+    "express": "^5.2.1"
+>>>>>>> 70992f206a9544910f8ac5bc70693382600a3a50
   },
   "devDependencies": {
     "nodemon": "^3.1.14"

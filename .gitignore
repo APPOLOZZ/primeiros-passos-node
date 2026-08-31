@@ -1,4 +1,8 @@
 /node_modules
+<<<<<<< HEAD
 .env
 /uploads/*
 !/uploads/.gitkeep
+=======
+.env
+>>>>>>> 70992f206a9544910f8ac5bc70693382600a3a50
