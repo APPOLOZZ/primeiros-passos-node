@@ -6,6 +6,7 @@ import usuariosRoutes from "./src/routes/usuarios.routes.js";
 import authRoutes from "./src/routes/auth.routes.js";
 import jogosRoutes from "./src/routes/jogos.routes.js";
 import uploadRoutes from "./src/routes/upload.routes.js";
+import prisma from "./src/docs/prisma.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -28,7 +29,21 @@ app.use(authRoutes);
 app.use(jogosRoutes);
 app.use(uploadRoutes);
 
-app.listen(port, () => {
+try {
+
+  await prisma.$connect();
+  console.log("Banco conectado!");
+  app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
   console.log(`Documentação disponível em http://localhost:${port}/api-docs`);
+
 });
+
+  
+} catch (error) {
+  console.error("Erro ao conectar ao banco de dados:", error.message);
+  
+  await prisma.$disconnect();
+
+  process.exitCode = -1;
+}
