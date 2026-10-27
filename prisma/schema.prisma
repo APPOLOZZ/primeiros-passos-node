@@ -19,4 +19,16 @@ model Jogo{
  plataforma String @db.VarChar(50)
 
  @@map("jogos")
+
+ 
+}
+model Usuario{
+id String @id @default(uuid()) @db.VarChar(36) 
+ nome String @db.VarChar(100) 
+ email String @unique @db.VarChar(191) 
+ senhaHash String @db.VarChar(255) 
+ created DateTime @default(now()) 
+ updated DateTime @updatedAt 
+
+ @@map("usuarios")
 }
